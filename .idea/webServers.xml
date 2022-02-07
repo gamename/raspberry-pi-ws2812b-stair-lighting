@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="957be2f1-6738-457f-a1ab-2d0c3d846da7" name="192.168.0.199">
+        <fileTransfer rootFolder="/home/tennis/raspberry-pi-ws2812b-stair-lighting" accessType="SFTP" host="192.168.0.199" port="22" sshConfigId="bd58e9d5-ab2c-48c1-9ccd-4b889c32a22d" sshConfig="tennis@192.168.0.199:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
