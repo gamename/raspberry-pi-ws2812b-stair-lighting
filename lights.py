@@ -23,7 +23,9 @@ while True:
     if GPIO.input(TOP_OF_STAIRS_PIN):
         # print("Motion detected 23!!")
         for count in range(0, MAX_PIXELS, 1):
-            pixels[count] = (255, 0, 0)
+            for red_intensity in range(0, 255):
+                pixels[count] = (red_intensity, 0, 0)
+                time.sleep(0.1)
         time.sleep(TRANSIT_DELAY)
         for count in range(0, MAX_PIXELS, 1):
             pixels[count] = (0, 0, 0)
