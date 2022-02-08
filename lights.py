@@ -21,14 +21,14 @@ GPIO.setup(BOTTOM_OF_STAIRS_PIN, GPIO.IN)
 
 while True:
     if GPIO.input(TOP_OF_STAIRS_PIN):
-        # print("Motion detected 23!!")
+        # print("Motion detected at the TOP of stairs!!")
         for count in range(0, MAX_PIXELS, 1):
             pixels[count] = (255, 0, 0)
         time.sleep(TRANSIT_DELAY)
         for count in range(0, MAX_PIXELS, 1):
             pixels[count] = (0, 0, 0)
     elif GPIO.input(BOTTOM_OF_STAIRS_PIN):
-        # print("Motion detected 24!!")
+        # print("Motion detected at the BOTTOM of stairs!!")
         for count in range(MAX_PIXELS - 1, 0, -1):
             pixels[count] = (255, 255, 255)
         time.sleep(TRANSIT_DELAY)
