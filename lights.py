@@ -36,5 +36,4 @@ while True:
             pixels[count] = (0, 0, 0)
     else:
         # print("No motion, all okay.")
-        time.sleep(1)
-    time.sleep(0.5)
+        pass
