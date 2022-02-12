@@ -1,9 +1,27 @@
 # raspberry-pi-ws2812b-stair-lighting
 
-## overview
+## Overview
+This is a simple raspberry pi project to use a WS2812b LED strip for lighting a flight of stairs.  
+
 ## Hardware
+Raspberry Pi Model 3B  V1.2
+
 ## OS
-## wiring diagram
+```bash
+tennis@stairs:~ $ cat /etc/*-release
+PRETTY_NAME="Raspbian GNU/Linux 11 (bullseye)"
+NAME="Raspbian GNU/Linux"
+VERSION_ID="11"
+VERSION="11 (bullseye)"
+VERSION_CODENAME=bullseye
+ID=raspbian
+ID_LIKE=debian
+HOME_URL="http://www.raspbian.org/"
+SUPPORT_URL="http://www.raspbian.org/RaspbianForums"
+BUG_REPORT_URL="http://www.raspbian.org/RaspbianBugs"
+```
+
+## Wiring diagram
 First, lets establish which raspberry pi we're using by invoking the `pinout` command.
 ```bash
 tennis@stairs:~ $ pinout
@@ -56,6 +74,11 @@ GPIO26 (37) (38) GPIO20
 
 For further information, please refer to https://pinout.xyz/
 ```
-## parts list
-## pictures
-## links
+
+![](.README_images/wiring.png)
+
+## Parts List
+
+## Pictures
+
+## Links
