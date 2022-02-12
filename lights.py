@@ -4,7 +4,7 @@ import RPi.GPIO as GPIO
 import time
 
 MAX_PIXELS = 300
-TRANSIT_DELAY = 30
+SHINE_TIMER = 45
 TOP_OF_STAIRS_PIN = 23
 BOTTOM_OF_STAIRS_PIN = 24
 
@@ -24,14 +24,14 @@ while True:
         # print("Motion detected at the TOP of stairs!!")
         for count in range(0, MAX_PIXELS, 1):
             pixels[count] = (255, 0, 0)
-        time.sleep(TRANSIT_DELAY)
+        time.sleep(SHINE_TIMER)
         for count in range(0, MAX_PIXELS, 1):
             pixels[count] = (0, 0, 0)
     elif GPIO.input(BOTTOM_OF_STAIRS_PIN):
         # print("Motion detected at the BOTTOM of stairs!!")
         for count in range(MAX_PIXELS - 1, 0, -1):
             pixels[count] = (0, 0, 255)
-        time.sleep(TRANSIT_DELAY)
+        time.sleep(SHINE_TIMER)
         for count in range(MAX_PIXELS - 1, 0, -1):
             pixels[count] = (0, 0, 0)
     else:
