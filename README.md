@@ -78,6 +78,31 @@ For further information, please refer to https://pinout.xyz/
 ![](.README_images/wiring.png)
 
 ## Parts List
+[Ximimark AM312 Mini Pyroelectric PIR Human Sensor](https://www.amazon.com/gp/product/B07G1S5LS5/ref=ppx_yo_dt_b_asin_title_o07_s02?ie=UTF8&psc=1)
+
+[BTF-LIGHTING WS2812B](https://www.amazon.com/gp/product/B01CDTEG1O/ref=ppx_yo_dt_b_asin_title_o07_s01?ie=UTF8&psc=1)
+
+[BTF-LIGHTING 20 Pairs JST SM 3 Pin Connectors](https://www.amazon.com/gp/product/B01DC0KIT2/ref=ppx_yo_dt_b_asin_title_o07_s01?ie=UTF8&psc=1)
+
+[SHNITPWR 5V DC Power Supply](https://www.amazon.com/gp/product/B07TSKK4FR/ref=ppx_yo_dt_b_asin_title_o07_s01?ie=UTF8&th=1)
+
+[hunhun 10-Pack 6.6ft/ 2Meter U Shape LED Aluminum Channel System](https://www.amazon.com/gp/product/B07F923CXW/ref=ppx_yo_dt_b_asin_title_o07_s00?ie=UTF8&psc=1)
+
+[Wirefy 110 PCS Solder Seal Wire Connectors Kit](https://www.amazon.com/gp/product/B01M0EZBYQ/ref=ppx_yo_dt_b_asin_title_o00_s00?ie=UTF8&th=1)
+
+[Breadboard Jumper wire Ribbon Cables](https://www.amazon.com/gp/product/B06XRV92ZB/ref=ppx_yo_dt_b_asin_title_o09_s00?ie=UTF8&psc=1)
+
+[Raspberry Pi 3 Model B B+ A+ Plus Power Supply](https://www.amazon.com/gp/product/B01N336XEU/ref=ppx_yo_dt_b_asin_title_o02_s00?ie=UTF8&th=1)
+
+[Junction Box Enclosure Case](https://www.amazon.com/gp/product/B07DYYTSDR/ref=ppx_yo_dt_b_asin_title_o01_s00?ie=UTF8&psc=1)
+
+[Extension Cable Line Wire for WS2812b](https://www.amazon.com/gp/product/B06Y4716V7/ref=ppx_yo_dt_b_asin_title_o01_s02?ie=UTF8&psc=1)
+
+[3M Double Sided Tape Mounting Tape](https://www.amazon.com/gp/product/B082WW5NSM/ref=ppx_yo_dt_b_asin_title_o08_s00?ie=UTF8&th=1)
+
+[Raspberry Pi 3 B+ Case](https://www.amazon.com/gp/product/B079M96KWZ/ref=ppx_yo_dt_b_asin_title_o06_s01?ie=UTF8&psc=1)
+
+[Raspberry Pi 3 Model B Board](https://www.amazon.com/Raspberry-Pi-MS-004-00000024-Model-Board/dp/B01LPLPBS8/ref=sr_1_3?keywords=raspberry+pi+3&qid=1644695196&sprefix=rasp%2Caps%2C135&sr=8-3)
 
 ## Pictures
 
