@@ -3,7 +3,8 @@ import RPi.GPIO as GPIO
 import time
 
 channel = 20
-GPIO.setmode(GPIO.BCM)  
+GPIO.setmode(GPIO.BCM)
+
 # Setup your channel
 GPIO.setup(channel, GPIO.OUT)
 GPIO.output(channel, GPIO.LOW)
