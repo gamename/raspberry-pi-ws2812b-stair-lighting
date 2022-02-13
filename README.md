@@ -1,7 +1,9 @@
 # raspberry-pi-ws2812b-stair-lighting
 
 ## Overview
-This is a simple raspberry pi project to use a WS2812b LED strip for lighting a flight of stairs.  
+This is a simple raspberry pi project to use a WS2812b LED strip for lighting a flight of stairs. The design assumes that the LED strip extends from the top of the stairs to the bottom. It also assumes that the raspberry pi is at the top of the stairs too.  There is one motion detector at the top of the stairs and one motion detector at the bottom.
+
+![](.README_images/basic-design.png)
 
 ## Hardware
 Raspberry Pi Model 3B  V1.2
