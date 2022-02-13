@@ -4,8 +4,10 @@ import RPi.GPIO as GPIO
 import time
 
 MAX_PIXELS = 7 
-TRANSIT_DELAY = 30
+EGRESS_INTERVAL = 30
 STAIRS_PIN = 21
+WHITE = (255,255,255)
+OFF = (0,0,0)
 
 pixels = neopixel.NeoPixel(board.D18, MAX_PIXELS)
 
@@ -18,10 +20,11 @@ GPIO.setmode(GPIO.BCM)
 GPIO.setup(STAIRS_PIN, GPIO.IN)
 
 while True:
-    if GPIO.input(STAIRS_PIN):
-        pixels.fill((255, 255, 255))
-        time.sleep(TRANSIT_DELAY)
-        pixels.fill((0, 0, 0))
-    else:
-        time.sleep(1)
-    time.sleep(0.5)
+    try: 
+        if GPIO.input(STAIRS_PIN):
+            pixels.fill(WHITE)
+            time.sleep(EGRESS_INTERVAL)
+            pixels.fill(OFF)
+    except KeyboardInterrupt:
+        pixels.fill(OFF)
+        exit()
