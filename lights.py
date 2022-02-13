@@ -23,7 +23,10 @@ GPIO.setup(AMBIENT_LIGHT_PIN, GPIO.OUT)
 GPIO.output(AMBIENT_LIGHT_PIN, GPIO.LOW)
 
 while True:
-    room_dark = GPIO.input(AMBIENT_LIGHT_PIN)
+    # room_dark = GPIO.input(AMBIENT_LIGHT_PIN)
+    # Accidentally fried the relay. Set this to true on a temp basis
+    room_dark = True
+
     if room_dark:
         if GPIO.input(TOP_OF_STAIRS_PIN):
             # print("Motion detected at the TOP of stairs!!")
