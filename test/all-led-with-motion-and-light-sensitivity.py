@@ -17,11 +17,13 @@ GPIO.setmode(GPIO.BCM)
 
 # Read output from PIR motion sensor
 GPIO.setup(STAIRS_PIN, GPIO.IN)
-GPIO.setup(AMBIENT_LIGHT_PIN, GPIO.OUT)
-GPIO.output(AMBIENT_LIGHT_PIN, GPIO.LOW)
+
+# Read output from the photosensor
+GPIO.setup(AMBIENT_LIGHT_PIN, GPIO.IN)
 
 while True:
     darkness = GPIO.input(AMBIENT_LIGHT_PIN)
+    #print("pin is " + str(darkness))
     if darkness:
         if GPIO.input(STAIRS_PIN):
             pixels.fill((255, 255, 255))
