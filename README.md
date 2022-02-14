@@ -1,7 +1,9 @@
 # raspberry-pi-ws2812b-stair-lighting
 
 ## Overview
-This is a simple raspberry pi project to use a WS2812b LED strip for lighting a flight of stairs.  
+This is a simple raspberry pi project to use a WS2812b LED strip for lighting a flight of stairs. The design assumes that the LED strip extends from the top of the stairs to the bottom. It also assumes that the raspberry pi is at the top of the stairs too.  There is one motion detector at the top of the stairs and one motion detector at the bottom.
+
+![](.README_images/basic-design.png)
 
 ## Hardware
 Raspberry Pi Model 3B  V1.2
@@ -104,6 +106,24 @@ For further information, please refer to https://pinout.xyz/
 
 [Raspberry Pi 3 Model B Board](https://www.amazon.com/Raspberry-Pi-MS-004-00000024-Model-Board/dp/B01LPLPBS8/ref=sr_1_3?keywords=raspberry+pi+3&qid=1644695196&sprefix=rasp%2Caps%2C135&sr=8-3)
 
-## Pictures
-
 ## Links
+[Raspberry Pi 3 pinout](http://pinout.xyz/)
+
+[Wiring options for RPi](https://learn.adafruit.com/neopixels-on-raspberry-pi/raspberry-pi-wiring)
+
+[The wiring option I used](https://learn.adafruit.com/assets/63928)
+
+[Python Lib installation](https://learn.adafruit.com/neopixels-on-raspberry-pi/python-usage)
+
+[Motion sensor info](https://projects.raspberrypi.org/en/projects/physical-computing/11)
+
+[GPIO Library doc](https://gpiozero.readthedocs.io/en/stable/api_input.html#motionsensor-d-sun-pir)
+
+[NeoPixel Uber Guide](https://gpiozero.readthedocs.io/en/stable/api_input.html#motionsensor-d-sun-pir)
+
+[How to start a script at boot time](https://www.dexterindustries.com/howto/run-a-program-on-your-raspberry-pi-at-startup/)
+
+[Wiring color code standards](https://www.allaboutcircuits.com/textbook/reference/chpt-2/wiring-color-codes/)
+
+[Amperage calculation](https://electronics.stackexchange.com/questions/396313/ws2812b-5050-60-led-per-meter-300-led-strip-power-issues)
+
