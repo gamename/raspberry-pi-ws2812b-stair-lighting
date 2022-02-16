@@ -56,24 +56,24 @@ while True:
     try:
         # IF it is nighttime, switch on the DARK indicator
         if GPIO.input(DARK_INDICATOR_PIN):
-            # print("Room DARK")
+            print("Room DARK")
             if GPIO.input(TOP_OF_STAIRS_INPUT_PIN):
-                # print("Motion detected at the TOP of stairs!!")
+                print("Motion detected at the TOP of stairs!!")
                 top_to_bottom(MAX_PIXELS, WHITE)
                 time.sleep(SHINE_TIMER)
                 top_to_bottom(MAX_PIXELS, OFF)
             elif GPIO.input(BOTTOM_OF_STAIRS_INPUT_PIN):
-                # print("Motion detected at the BOTTOM of stairs!!")
+                print("Motion detected at the BOTTOM of stairs!!")
                 bottom_to_top(MAX_PIXELS, WHITE)
                 time.sleep(SHINE_TIMER)
                 bottom_to_top(MAX_PIXELS, OFF)
             else:
-                # print("No motion, all okay.")
+                print("No motion, all okay.")
                 pass
         else:
-            # print("room NOT dark")
+            print("room NOT dark")
             pass
     except KeyboardInterrupt:
-        # print("KeyboardInterrupt pressed")
+        print("KeyboardInterrupt pressed")
         pixels.fill(OFF)
         exit()
