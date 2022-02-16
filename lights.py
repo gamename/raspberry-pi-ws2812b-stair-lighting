@@ -9,6 +9,9 @@ MAX_PIXELS = 300
 # How long should we shine the pixels?
 SHINE_TIMER = 45
 
+# How bright should the LEDs be?
+BRIGHTNESS = 0.1
+
 # What GPIO pin is associated with a condition?
 TOP_OF_STAIRS_INPUT_PIN = 23
 BOTTOM_OF_STAIRS_INPUT_PIN = 24
@@ -35,7 +38,7 @@ def bottom_to_top(length, color):
         pixels[count] = color
 
 
-pixels = neopixel.NeoPixel(LED_STRIP_OUTPUT_PIN, MAX_PIXELS)
+pixels = neopixel.NeoPixel(LED_STRIP_OUTPUT_PIN, MAX_PIXELS, brightness=BRIGHTNESS)
 
 GPIO.setwarnings(False)
 
