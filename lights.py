@@ -5,13 +5,19 @@ import time
 
 MAX_PIXELS = 300
 SHINE_TIMER = 45
-TOP_OF_STAIRS_PIN = 23
-BOTTOM_OF_STAIRS_PIN = 24
-AMBIENT_LIGHT_PIN = 21
+
+# What GPIO pin is associated with a condition?
+TOP_OF_STAIRS = 23
+BOTTOM_OF_STAIRS = 24
+DARK = 21
+
+# Use the board internal definition for this
+LED_STRIP = board.D18
 
 # Colors
 WHITE = (255, 255, 255)
 RED = (255, 0, 0)
+GREEN = (0, 255, 0)
 BLUE = (0, 0, 255)
 OFF = (0, 0, 0)
 
@@ -26,7 +32,7 @@ def bottom_to_top(length, color):
         pixels[count] = color
 
 
-pixels = neopixel.NeoPixel(board.D18, MAX_PIXELS)
+pixels = neopixel.NeoPixel(LED_STRIP, MAX_PIXELS)
 
 GPIO.setwarnings(False)
 
@@ -34,26 +40,23 @@ GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BCM)
 
 # Read output from PIR motion sensor
-GPIO.setup(TOP_OF_STAIRS_PIN, GPIO.IN)
-GPIO.setup(BOTTOM_OF_STAIRS_PIN, GPIO.IN)
+GPIO.setup(TOP_OF_STAIRS, GPIO.IN)
+GPIO.setup(BOTTOM_OF_STAIRS, GPIO.IN)
 
 # Configure the light sensor
-GPIO.setup(AMBIENT_LIGHT_PIN, GPIO.OUT)
-GPIO.output(AMBIENT_LIGHT_PIN, GPIO.LOW)
+GPIO.setup(DARK, GPIO.IN)
 
 while True:
     try:
-        # room_dark = GPIO.input(AMBIENT_LIGHT_PIN)
-        # Accidentally fried the relay. Set this to true on a temp basis
-        room_dark = True
-        if room_dark:
+        # IF it is nighttime, switch on the DARK indicator
+        if GPIO.input(DARK):
             # print("Room DARK")
-            if GPIO.input(TOP_OF_STAIRS_PIN):
+            if GPIO.input(TOP_OF_STAIRS):
                 # print("Motion detected at the TOP of stairs!!")
-                top_to_bottom(MAX_PIXELS, RED)
+                top_to_bottom(MAX_PIXELS, GREEN)
                 time.sleep(SHINE_TIMER)
                 top_to_bottom(MAX_PIXELS, OFF)
-            elif GPIO.input(BOTTOM_OF_STAIRS_PIN):
+            elif GPIO.input(BOTTOM_OF_STAIRS):
                 # print("Motion detected at the BOTTOM of stairs!!")
                 bottom_to_top(MAX_PIXELS, BLUE)
                 time.sleep(SHINE_TIMER)
