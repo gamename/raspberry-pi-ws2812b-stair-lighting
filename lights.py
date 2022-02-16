@@ -28,13 +28,13 @@ BLUE = (0, 0, 255)
 OFF = (0, 0, 0)
 
 
-def top_to_bottom(length, color):
-    for count in range(0, length, 1):
+def top_to_bottom(number_of_pixels, color):
+    for count in range(0, number_of_pixels, 1):
         pixels[count] = color
 
 
-def bottom_to_top(length, color):
-    for count in range(length - 1, 0, -1):
+def bottom_to_top(number_of_pixels, color):
+    for count in range(number_of_pixels - 1, 0, -1):
         pixels[count] = color
 
 
