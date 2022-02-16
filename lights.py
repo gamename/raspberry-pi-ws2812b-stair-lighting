@@ -3,16 +3,19 @@ import neopixel
 import RPi.GPIO as GPIO
 import time
 
+# How many pixels are in the WS2812b strip?
 MAX_PIXELS = 300
+
+# How long should we shine the pixels?
 SHINE_TIMER = 45
 
 # What GPIO pin is associated with a condition?
-TOP_OF_STAIRS = 23
-BOTTOM_OF_STAIRS = 24
-DARK = 21
+TOP_OF_STAIRS_INPUT_PIN = 23
+BOTTOM_OF_STAIRS_INPUT_PIN = 24
+DARK_INDICATOR_PIN = 21
 
 # Use the board internal definition for this
-LED_STRIP = board.D18
+LED_STRIP_OUTPUT_PIN = board.D18
 
 # Colors
 WHITE = (255, 255, 255)
@@ -32,7 +35,7 @@ def bottom_to_top(length, color):
         pixels[count] = color
 
 
-pixels = neopixel.NeoPixel(LED_STRIP, MAX_PIXELS)
+pixels = neopixel.NeoPixel(LED_STRIP_OUTPUT_PIN, MAX_PIXELS)
 
 GPIO.setwarnings(False)
 
@@ -40,23 +43,23 @@ GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BCM)
 
 # Read output from PIR motion sensor
-GPIO.setup(TOP_OF_STAIRS, GPIO.IN)
-GPIO.setup(BOTTOM_OF_STAIRS, GPIO.IN)
+GPIO.setup(TOP_OF_STAIRS_INPUT_PIN, GPIO.IN)
+GPIO.setup(BOTTOM_OF_STAIRS_INPUT_PIN, GPIO.IN)
 
 # Configure the light sensor
-GPIO.setup(DARK, GPIO.IN)
+GPIO.setup(DARK_INDICATOR_PIN, GPIO.IN)
 
 while True:
     try:
         # IF it is nighttime, switch on the DARK indicator
-        if GPIO.input(DARK):
+        if GPIO.input(DARK_INDICATOR_PIN):
             # print("Room DARK")
-            if GPIO.input(TOP_OF_STAIRS):
+            if GPIO.input(TOP_OF_STAIRS_INPUT_PIN):
                 # print("Motion detected at the TOP of stairs!!")
                 top_to_bottom(MAX_PIXELS, GREEN)
                 time.sleep(SHINE_TIMER)
                 top_to_bottom(MAX_PIXELS, OFF)
-            elif GPIO.input(BOTTOM_OF_STAIRS):
+            elif GPIO.input(BOTTOM_OF_STAIRS_INPUT_PIN):
                 # print("Motion detected at the BOTTOM of stairs!!")
                 bottom_to_top(MAX_PIXELS, BLUE)
                 time.sleep(SHINE_TIMER)
