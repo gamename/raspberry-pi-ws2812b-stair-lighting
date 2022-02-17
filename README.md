@@ -106,6 +106,7 @@ For further information, please refer to https://pinout.xyz/
 
 [Raspberry Pi 3 Model B Board](https://www.amazon.com/Raspberry-Pi-MS-004-00000024-Model-Board/dp/B01LPLPBS8/ref=sr_1_3?keywords=raspberry+pi+3&qid=1644695196&sprefix=rasp%2Caps%2C135&sr=8-3)
 
+[Light Intensity Detection Photosensitive Resistor Module](https://www.amazon.com/gp/product/B07QKJPWCG/ref=ppx_yo_dt_b_asin_title_o00_s00?ie=UTF8&psc=1)
 ## Links
 [Raspberry Pi 3 pinout](http://pinout.xyz/)
 
