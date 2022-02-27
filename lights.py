@@ -1,9 +1,19 @@
+"""
+THis is a script to light a WS2812b LED strip on a flight of stairs using a
+raspberry pi!!
+
+There are 3 sensors utilized:
+  1. A light sensor at the top of the stairs to determine if it is light or dark (no need to light stairs in daytime).
+  2. A motion sensor at the top of the stairs (to detect someone going down)
+  3. A motion sensor at the bottom of the stairs (to detect someone going up)
+
+"""
 import board
 import neopixel
 import RPi.GPIO as GPIO
 import time
 
-# How many pixels are in the WS2812b strip?
+# How many pixels are in the WS2812b strip?k
 MAX_PIXELS = 300
 
 # How long should we shine the pixels?
@@ -29,11 +39,21 @@ OFF = (0, 0, 0)
 
 
 def top_to_bottom(number_of_pixels, color):
+    """
+    Light the stairs starting from the top
+    :param number_of_pixels: Number of pixels on the ws2812b strip.
+    :param color: The color we are setting the strip to.
+    """
     for count in range(0, number_of_pixels, 1):
         pixels[count] = color
 
 
 def bottom_to_top(number_of_pixels, color):
+    """
+    Light the stairs starting from the bottom
+    :param number_of_pixels: Number of pixels on the ws2812b strip.
+    :param color: The color we are setting the strip to.
+    """
     for count in range(number_of_pixels - 1, 0, -1):
         pixels[count] = color
 
