@@ -10,7 +10,7 @@ MAX_PIXELS = 300
 SHINE_TIMER = 45
 
 # How bright should the LEDs be?
-BRIGHTNESS = 0.1
+BRIGHTNESS = 0.05
 
 # What GPIO pin is associated with a condition?
 TOP_OF_STAIRS_INPUT_PIN = 20
